@@ -1,3 +1,29 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "http://www.glazemixup.com/"
+title = "Mixup"
+
+# theme = "bento"
+author = "Ken Chin-Purcell"
+copyright = "MIT"
+
+[params]
+  # Show intro in the home page (with headline and description)
+  intro = true
+  headline = "Mixup is a galze chemistry calculator"
+  description = "Glaze calculation for the timid"
+
+# Items in the top menu
+[menu]
+  [[menu.main]]
+      name = "About"
+      url = "/about"
+      weight = 1
+
+  [[menu.main]]
+      name = "Archives"
+      url = "/archives"
+      weight = 1
+
+  [[menu.main]]
+      name = "Source code"
+      url = "https://github.com/leonardofaria/bento"
+      weight = 1
