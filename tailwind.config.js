@@ -9,8 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        // 'Inter',
-        'Georgia',
+        'Inter',
         'Roboto',
         'Helvetica Neue',
         'sans-serif'
@@ -30,5 +29,7 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }

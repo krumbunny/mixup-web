@@ -1,10 +1,7 @@
 {{ define "main" }}
 <main class="flex-1 mt-12 max-w-3xl mx-auto text-gray-700 w-full">
-  <article>
-      <h1>
-        Mixup
-      </h1>
-      <p>A Glaze Notebook and Chemistry Calculator</p>
+  <article class="prose font-sans">
+    {{ .Content }}
   </article>
 </main>
 {{ end }}
