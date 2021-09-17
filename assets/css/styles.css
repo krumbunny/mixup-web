@@ -2,4 +2,8 @@
 
 @tailwind components;
 
+a {
+  @apply hover:text-blue-900 transition duration-300 ease-in-out;
+}
+
 @tailwind utilities;

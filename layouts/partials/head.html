@@ -1,0 +1,19 @@
+<head itemscope itemtype="{{ .Site.BaseURL }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Kenneth Chin-Purcell" />  
+  
+  <title>{{ if ne .RelPermalink "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  {{ if .Site.IsServer }}
+  {{ $style := resources.Get "css/styles.css" | postCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ else }}
+  {{ $style := resources.Get "css/styles.css" | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+  {{ end }}  
+</head>

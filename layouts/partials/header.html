@@ -1,0 +1,11 @@
+<header id="header" class="header flex flex-col w-full m-0 p-3 text-gray-400">
+    <nav class="mx-auto p-6">
+      <ul class="w-full flex flex-row text-sm font-bold">
+        {{ range .Site.Menus.main.ByWeight }}
+        <li class="mx-3">
+          <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+</header>

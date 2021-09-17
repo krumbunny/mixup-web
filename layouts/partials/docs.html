@@ -1,0 +1,50 @@
+<main class="flex-1 p-3 mt-6 mx-auto w-full max-w-xl">
+  <div class="mb-2 text-gray-400 text-sm font-bold">
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ $url := .RelPermalink }}
+    {{ $.Scratch.Add "path" .Site.BaseURL }}
+    <ul class="flex flex-row">
+      <li class="mr-2">
+        <a href="/">home</a>
+      </li>
+      {{ range $index, $element := split $url "/" }}
+      {{ $.Scratch.Add "path" $element }}
+      {{ if ne $element "" }}
+      <li class="mx-1">
+        &gt; 
+        <a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+      </li>
+      {{ $.Scratch.Add "path" "/" }}
+      {{ end }}
+      {{ end }}
+    </ul> 
+  </div>
+  <div class="prose">
+    <article class="">
+      {{ .Content }}
+    </article>
+    <ul>
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+      <li>
+        <a href="{{.RelPermalink}}">{{.Title}}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="flex flex-row mt-12">
+    <div>
+      &lt;
+      {{ with .NextInSection }}
+      <a href='{{.RelPermalink}}'>{{.Title}}</a>
+      {{end}} 
+    </div>
+    <div class="flex-1"></div>
+    <div>  
+      {{ with .PrevInSection }}
+      <a href='{{.RelPermalink}}'>{{.Title}}</a>
+      {{end}} 
+      &gt;
+    </div>
+  </div>
+</main>

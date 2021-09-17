@@ -4,7 +4,7 @@ author = "Hugo Authors"
 
 # Mixup
 
-A glaze notebook and chemistry calculator
+A glaze notebook and chemistry calculator and a floor wax
  
 Mixup is great because:
 * It's a *native mac app*
